@@ -25,24 +25,24 @@ float Vec2::GetNorm()
     return sqrtf((x*x) + (y*y));
 }
 
+
+
+
+
 // Sobrecarga de operadores +, - e *
-Vec2 Vec2::operator + ( Vec2 v2)
+
+inline Vec2 Vec2::operator + (const Vec2 v2) const
 {
     return Vec2(this->x + v2.x, this->y + v2.y);
 }
-Vec2 Vec2::operator - ( Vec2 v2)
+inline Vec2 Vec2::operator - (const Vec2 v2) const
 {
     return Vec2(this->x - v2.x, this->y - v2.y);
 }
-Vec2 Vec2::operator * ( Vec2 v2)
+inline Vec2 Vec2::operator * (const Vec2 v2) const
 {
     return Vec2(this->x * v2.x, this->y * v2.y);
 }
-Vec2 Vec2::operator * (float const& e)
-{
-    return Vec2(this->x * e, this->y * e);
-}
-
 
 void Vec2::Normalize()
 {

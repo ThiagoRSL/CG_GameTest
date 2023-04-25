@@ -564,7 +564,7 @@
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1682435217 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\main.cpp
+1682442909 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -589,10 +589,10 @@
 1682124950 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\sliderelement.cpp
 	"SliderElement.h"
 
-1682435254 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\vec2.cpp
+1682442579 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\vec2.cpp
 	"Vec2.h"
 
-1682435271 c:\users\thiago\desktop\grad\cg\jogomanager\src\vec2.h
+1682443127 c:\users\thiago\desktop\grad\cg\jogomanager\src\vec2.h
 	<math.h>
 	"Renderable.h"
 	"gl_canvas2d.h"

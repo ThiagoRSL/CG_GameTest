@@ -8,6 +8,7 @@
 class Vec2 : public Renderable
 {
     public:
+        float anchor_x, anchor_y;
         float x, y;
 
         Vec2();
@@ -19,10 +20,13 @@ class Vec2 : public Renderable
 
         // Sobrecarga de Operadores
         //inline vetor operator + ( const vetor v )
-        inline Vec2 operator + (Vec2 v2);
-        inline Vec2 operator - (Vec2 v2);
-        inline Vec2 operator * (Vec2 v2);
-        inline Vec2 operator * (float const& e);
+        inline Vec2 operator + (const Vec2 v2) const;
+        inline Vec2 operator - (const Vec2 v2) const;
+        inline Vec2 operator * (const Vec2 v2) const;
+        inline Vec2 operator * (const float& e) const
+        {
+            return Vec2(this->x * e, this->y * e);
+        }
 
         // Normaliza o proprio vetor
         void Normalize();

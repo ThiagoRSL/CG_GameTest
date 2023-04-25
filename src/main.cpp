@@ -30,11 +30,12 @@
 #include "Element.h"
 #include "Vec2.h"
 Vec2* v1;
-
+Vec2* v2;
 void render()
 {
     CV::clear(0,0,0);
     v1->Render();
+    v2->Render();
 }
 
 
@@ -74,16 +75,18 @@ void keyboardUp(int key)
         break;
 	  //seta para a esquerda
       case 200:
-        v1->Rotate(-5);
+        v1->Rotate(-5.0);
+        v2->Rotate(-5.0);
 	  break;
       case 201:
         v1->Normalize();
 	  break;
 	  case 202:
-        v1->Rotate(5);//FigureManager::shared_instance().Rotate(DEGREES_ROTATION);
+        v1->Rotate(5.0);//FigureManager::shared_instance().Rotate(DEGREES_ROTATION);
+        v2->Rotate(5.0);//FigureManager::shared_instance().Rotate(DEGREES_ROTATION);
 	  break;
       case 203:
-        *v1 + *v1;
+        *v2 = *v1 * 3.0f;
 	  break;
    }
 }
@@ -102,6 +105,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 int main(void)
 {
     v1 = new Vec2(100,100);
+    v2 = new Vec2(300,100);
 
     int screenWidth = 1080;
     int screenHeight = 720;
