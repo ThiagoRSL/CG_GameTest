@@ -1,0 +1,604 @@
+# depslib dependency file v1.0
+1626955631 source:c:\users\astros\desktop\cg\x\gl_1_canvasglut\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1603974868 c:\users\astros\desktop\cg\x\gl_1_canvasglut\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1426372440 c:\users\astros\desktop\cg\x\gl_1_canvasglut\include\gl\glut.h
+	"freeglut_std.h"
+
+1437579942 c:\users\astros\desktop\cg\x\gl_1_canvasglut\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1426372440 c:\users\astros\desktop\cg\x\gl_1_canvasglut\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1589217858 c:\users\astros\desktop\cg\x\gl_1_canvasglut\src\vector2.h
+
+1603975055 source:c:\users\astros\desktop\cg\x\gl_1_canvasglut\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"Bola.h"
+	"Relogio.h"
+	"Botao.h"
+
+1589214882 c:\users\astros\desktop\cg\x\gl_1_canvasglut\src\bola.h
+	"gl_canvas2d.h"
+
+1193164156 c:\users\astros\desktop\cg\x\gl_1_canvasglut\src\relogio.h
+	"gl_canvas2d.h"
+
+1589214891 c:\users\astros\desktop\cg\x\gl_1_canvasglut\src\botao.h
+	"gl_canvas2d.h"
+
+1589218349 source:c:\users\astros\desktop\cg\x\gl_1_canvasglut\src\relogio.cpp
+	"Relogio.h"
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+
+1681397788 source:c:\users\astros\desktop\cg\t1\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1680439164 c:\users\astros\desktop\cg\t1\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1680439164 c:\users\astros\desktop\cg\t1\include\gl\glut.h
+	"freeglut_std.h"
+
+1680439164 c:\users\astros\desktop\cg\t1\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1680439164 c:\users\astros\desktop\cg\t1\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1680439164 c:\users\astros\desktop\cg\t1\src\vector2.h
+
+1589218349 source:c:\users\astros\desktop\cg\t1\src\relogio.cpp
+	"Relogio.h"
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+
+1193164156 c:\users\astros\desktop\cg\t1\src\relogio.h
+	"gl_canvas2d.h"
+
+1681406411 source:c:\users\astros\desktop\cg\t1\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+	"MouseManager.h"
+	"RenderManager.h"
+	"FigureManager.h"
+	"Figure.h"
+	"Element.h"
+
+1680100323 c:\users\astros\desktop\cg\t1\include\uielement.h
+	"Renderizable.h"
+
+1589214882 c:\users\astros\desktop\cg\t1\src\bola.h
+	"gl_canvas2d.h"
+
+1589214891 c:\users\astros\desktop\cg\t1\src\botao.h
+	"gl_canvas2d.h"
+
+1680276277 source:c:\users\astros\desktop\cg\t1\src\uielement.cpp
+	"UIElement.h"
+	<iostream>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"gl_canvas2d.h"
+
+1681406437 source:c:\users\astros\desktop\cg\t1\src\rendermanager.cpp
+	"RenderManager.h"
+
+1680106612 c:\users\astros\desktop\cg\t1\include\rendermanager.h
+	<stdlib.h>
+	<algorithm>
+	<iostream>
+	<list>
+	"Renderizable.h"
+
+1680099748 source:c:\users\astros\desktop\cg\t1\src\renderizable.cpp
+	"Renderizable.h"
+
+1680104295 c:\users\astros\desktop\cg\t1\include\renderizable.h
+
+1680269546 c:\users\astros\desktop\cg\t1\src\renderizable.h
+
+1680278556 c:\users\astros\desktop\cg\t1\src\uielement.h
+	<typeinfo>
+	<typeindex>
+
+1681406423 c:\users\astros\desktop\cg\t1\src\rendermanager.h
+	<stdlib.h>
+	<algorithm>
+	<iostream>
+	<vector>
+	"MouseManager.h"
+	"Element.h"
+	"ButtonElement.h"
+
+1681330444 source:c:\users\astros\desktop\cg\t1\src\element.cpp
+	"Element.h"
+	"RenderManager.h"
+
+1681406052 c:\users\astros\desktop\cg\t1\src\element.h
+	<iostream>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"MouseManager.h"
+	"gl_canvas2d.h"
+	"GeometryAux.h"
+	<array>
+
+1682127172 source:c:\users\nektus\desktop\cg\t1\src\element.cpp
+	"Element.h"
+	"RenderManager.h"
+
+1682127204 c:\users\nektus\desktop\cg\t1\src\element.h
+	<iostream>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"MouseManager.h"
+	"gl_canvas2d.h"
+	"GeometryAux.h"
+	<array>
+
+1681341529 c:\users\nektus\desktop\cg\t1\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1681341529 c:\users\nektus\desktop\cg\t1\include\gl\glut.h
+	"freeglut_std.h"
+
+1681341529 c:\users\nektus\desktop\cg\t1\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1681341529 c:\users\nektus\desktop\cg\t1\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1681341529 c:\users\nektus\desktop\cg\t1\src\vector2.h
+
+1682116617 c:\users\nektus\desktop\cg\t1\src\rendermanager.h
+	<stdlib.h>
+	<algorithm>
+	<iostream>
+	<vector>
+	"MouseManager.h"
+	"Element.h"
+	"ButtonElement.h"
+	"SliderElement.h"
+
+1681580258 source:c:\users\nektus\desktop\cg\t1\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1682130839 source:c:\users\nektus\desktop\cg\t1\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	"gl_canvas2d.h"
+	"FileManager.h"
+	"MouseManager.h"
+	"RenderManager.h"
+	"FigureManager.h"
+	"Figure.h"
+	"Element.h"
+
+1682116658 source:c:\users\nektus\desktop\cg\t1\src\rendermanager.cpp
+	"RenderManager.h"
+
+1681317831 c:\users\astros\desktop\cg\t1\src\figuremanager.h
+	<stdlib.h>
+	<algorithm>
+	<iostream>
+	<vector>
+	"Element.h"
+	"Figure.h"
+
+1681406703 c:\users\astros\desktop\cg\t1\src\figure.h
+	"Element.h"
+	"GeometryAux.h"
+
+1681406699 source:c:\users\astros\desktop\cg\t1\src\figure.cpp
+	"Figure.h"
+
+1681398359 source:c:\users\astros\desktop\cg\t1\src\figuremanager.cpp
+	"FigureManager.h"
+
+1682129470 source:c:\users\nektus\desktop\cg\t1\src\figure.cpp
+	"Figure.h"
+
+1682127429 c:\users\nektus\desktop\cg\t1\src\figure.h
+	"Element.h"
+	"GeometryAux.h"
+
+1682127476 source:c:\users\nektus\desktop\cg\t1\src\figuremanager.cpp
+	"FigureManager.h"
+
+1682127489 c:\users\nektus\desktop\cg\t1\src\figuremanager.h
+	<stdlib.h>
+	<algorithm>
+	<iostream>
+	<vector>
+	"Element.h"
+	"Figure.h"
+
+1681341529 c:\users\nektus\desktop\cg\t1\src\mousemanager.h
+
+1681341529 source:c:\users\nektus\desktop\cg\t1\src\mousemanager.cpp
+	"MouseManager.h"
+
+1682121050 source:c:\users\nektus\desktop\cg\t1\src\geometryaux.cpp
+	"GeometryAux.h"
+
+1682121073 c:\users\nektus\desktop\cg\t1\src\geometryaux.h
+	<math.h>
+
+1681217848 c:\users\astros\desktop\cg\t1\src\mousemanager.h
+
+1681236038 c:\users\astros\desktop\cg\t1\src\geometryaux.h
+	<math.h>
+
+1681236078 source:c:\users\astros\desktop\cg\t1\src\geometryaux.cpp
+	"GeometryAux.h"
+
+1681217848 source:c:\users\astros\desktop\cg\t1\src\mousemanager.cpp
+	"MouseManager.h"
+
+1681405148 c:\users\astros\desktop\cg\t1\include\buttonelement.h
+	"Element.h"
+
+1681406443 source:c:\users\astros\desktop\cg\t1\src\buttonelement.cpp
+	"ButtonElement.h"
+
+1681406440 c:\users\astros\desktop\cg\t1\src\buttonelement.h
+	"Element.h"
+
+1682097725 c:\users\nektus\desktop\cg\t1\src\buttonelement.h
+	"Element.h"
+
+1682098771 source:c:\users\nektus\desktop\cg\t1\src\buttonelement.cpp
+	"ButtonElement.h"
+
+1682098771 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\buttonelement.cpp
+	"ButtonElement.h"
+
+1682097725 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\buttonelement.h
+	"Element.h"
+
+1682127204 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\element.h
+	<iostream>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"MouseManager.h"
+	"gl_canvas2d.h"
+	"GeometryAux.h"
+	<array>
+
+1681341529 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\mousemanager.h
+
+1681341529 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1681341529 c:\users\thiago\desktop\grad\cg\trabalhos\t1\include\gl\glut.h
+	"freeglut_std.h"
+
+1681341529 c:\users\thiago\desktop\grad\cg\trabalhos\t1\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1681341529 c:\users\thiago\desktop\grad\cg\trabalhos\t1\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1681341529 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\vector2.h
+
+1682121073 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\geometryaux.h
+	<math.h>
+
+1682127172 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\element.cpp
+	"Element.h"
+	"RenderManager.h"
+
+1682116617 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\rendermanager.h
+	<stdlib.h>
+	<algorithm>
+	<iostream>
+	<vector>
+	"MouseManager.h"
+	"Element.h"
+	"ButtonElement.h"
+	"SliderElement.h"
+
+1682129470 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\figure.cpp
+	"Figure.h"
+
+1682127429 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\figure.h
+	"Element.h"
+	"GeometryAux.h"
+
+1682127476 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\figuremanager.cpp
+	"FigureManager.h"
+
+1682127489 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\figuremanager.h
+	<stdlib.h>
+	<algorithm>
+	<iostream>
+	<vector>
+	"Element.h"
+	"Figure.h"
+
+1682121050 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\geometryaux.cpp
+	"GeometryAux.h"
+
+1681580258 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1682357858 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	"gl_canvas2d.h"
+	"FileManager.h"
+	"MouseManager.h"
+	"RenderManager.h"
+	"FigureManager.h"
+	"Figure.h"
+	"Element.h"
+
+1681341529 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\mousemanager.cpp
+	"MouseManager.h"
+
+1682116658 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\rendermanager.cpp
+	"RenderManager.h"
+
+1682124950 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\sliderelement.cpp
+	"SliderElement.h"
+
+1682118423 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\sliderelement.h
+	"Element.h"
+	"GeometryAux.h"
+
+1682118423 c:\users\nektus\desktop\cg\t1\src\sliderelement.h
+	"Element.h"
+	"GeometryAux.h"
+
+1682123464 source:c:\users\nektus\desktop\cg\t1\src\filemanager.cpp
+	"FileManager.h"
+
+1682123457 c:\users\nektus\desktop\cg\t1\src\filemanager.h
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<fstream>
+	<vector>
+
+1682124950 source:c:\users\nektus\desktop\cg\t1\src\sliderelement.cpp
+	"SliderElement.h"
+
+1682123464 source:c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\filemanager.cpp
+	"FileManager.h"
+
+1682123457 c:\users\thiago\desktop\grad\cg\trabalhos\t1\src\filemanager.h
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<fstream>
+	<vector>
+
+1682098771 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\buttonelement.cpp
+	"ButtonElement.h"
+
+1682097725 c:\users\thiago\desktop\grad\cg\jogomanager\src\buttonelement.h
+	"Element.h"
+
+1682127204 c:\users\thiago\desktop\grad\cg\jogomanager\src\element.h
+	<iostream>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"MouseManager.h"
+	"gl_canvas2d.h"
+	"GeometryAux.h"
+	<array>
+
+1681341529 c:\users\thiago\desktop\grad\cg\jogomanager\src\mousemanager.h
+
+1681341529 c:\users\thiago\desktop\grad\cg\jogomanager\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	"Vector2.h"
+
+1681341529 c:\users\thiago\desktop\grad\cg\jogomanager\include\gl\glut.h
+	"freeglut_std.h"
+
+1681341529 c:\users\thiago\desktop\grad\cg\jogomanager\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1681341529 c:\users\thiago\desktop\grad\cg\jogomanager\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1682429968 c:\users\thiago\desktop\grad\cg\jogomanager\src\vector2.h
+
+1682121073 c:\users\thiago\desktop\grad\cg\jogomanager\src\geometryaux.h
+	<math.h>
+
+1682127172 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\element.cpp
+	"Element.h"
+	"RenderManager.h"
+
+1682116617 c:\users\thiago\desktop\grad\cg\jogomanager\src\rendermanager.h
+	<stdlib.h>
+	<algorithm>
+	<iostream>
+	<vector>
+	"MouseManager.h"
+	"Element.h"
+	"ButtonElement.h"
+	"SliderElement.h"
+
+1682118423 c:\users\thiago\desktop\grad\cg\jogomanager\src\sliderelement.h
+	"Element.h"
+	"GeometryAux.h"
+
+1682129470 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\figure.cpp
+	"Figure.h"
+
+1682127429 c:\users\thiago\desktop\grad\cg\jogomanager\src\figure.h
+	"Element.h"
+	"GeometryAux.h"
+
+1682127476 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\figuremanager.cpp
+	"FigureManager.h"
+
+1682127489 c:\users\thiago\desktop\grad\cg\jogomanager\src\figuremanager.h
+	<stdlib.h>
+	<algorithm>
+	<iostream>
+	<vector>
+	"Element.h"
+	"Figure.h"
+
+1682123464 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\filemanager.cpp
+	"FileManager.h"
+
+1682123457 c:\users\thiago\desktop\grad\cg\jogomanager\src\filemanager.h
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<fstream>
+	<vector>
+
+1682121050 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\geometryaux.cpp
+	"GeometryAux.h"
+
+1681580258 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1682435217 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	"gl_canvas2d.h"
+	"FileManager.h"
+	"MouseManager.h"
+	"RenderManager.h"
+	"FigureManager.h"
+	"Figure.h"
+	"Element.h"
+	"Vec2.h"
+
+1681341529 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\mousemanager.cpp
+	"MouseManager.h"
+
+1682116658 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\rendermanager.cpp
+	"RenderManager.h"
+
+1682124950 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\sliderelement.cpp
+	"SliderElement.h"
+
+1682435254 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\vec2.cpp
+	"Vec2.h"
+
+1682435271 c:\users\thiago\desktop\grad\cg\jogomanager\src\vec2.h
+	<math.h>
+	"Renderable.h"
+	"gl_canvas2d.h"
+
+1682434178 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\renderable.cpp
+	"Renderable.h"
+
+1682434171 c:\users\thiago\desktop\grad\cg\jogomanager\src\renderable.h
+
