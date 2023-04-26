@@ -25,17 +25,12 @@
 #include "FileManager.h"
 #include "MouseManager.h"
 #include "RenderManager.h"
-#include "FigureManager.h"
-#include "Figure.h"
-#include "Element.h"
 #include "Vec2.h"
 Vec2* v1;
 Vec2* v2;
 void render()
 {
-    CV::clear(0,0,0);
-    v1->Render();
-    v2->Render();
+    RenderManager::shared_instance().RenderAll();
 }
 
 
@@ -60,6 +55,18 @@ void keyboardUp(int key)
       case 27:
 	     //exit(0);
 	  break;
+      case 50:
+	     v1->Mult(0.5);
+	  break;
+      case 52:
+	     v1->Sub(v2);
+	  break;
+      case 54:
+	     v1->Sum(v2);
+	  break;
+      case 56:
+	     v1->Mult(2);
+	  break;
 	  //tecla "I"
       case 105:
 	    // debugMode = !debugMode;
@@ -75,18 +82,18 @@ void keyboardUp(int key)
         break;
 	  //seta para a esquerda
       case 200:
-        v1->Rotate(-5.0);
-        v2->Rotate(-5.0);
+        v1->RotateDegrees(-5.0);
+        v2->RotateDegrees(-5.0);
 	  break;
       case 201:
         v1->Normalize();
 	  break;
 	  case 202:
-        v1->Rotate(5.0);//FigureManager::shared_instance().Rotate(DEGREES_ROTATION);
-        v2->Rotate(5.0);//FigureManager::shared_instance().Rotate(DEGREES_ROTATION);
+        v1->RotateDegrees(5.0);//FigureManager::shared_instance().Rotate(DEGREES_ROTATION);
+        v2->RotateDegrees(5.0);//FigureManager::shared_instance().Rotate(DEGREES_ROTATION);
 	  break;
       case 203:
-        *v2 = *v1 * 3.0f;
+        v1->Mult(2);
 	  break;
    }
 }
@@ -104,8 +111,13 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
 int main(void)
 {
-    v1 = new Vec2(100,100);
-    v2 = new Vec2(300,100);
+    v1 = new Vec2(300,100);
+    v2 = new Vec2(100,100);
+    v1->SetAnchor(500,500);
+    v2->SetAnchor(500,200);
+
+    RenderManager::shared_instance().AddRenderableToList(v1);
+    RenderManager::shared_instance().AddRenderableToList(v2);
 
     int screenWidth = 1080;
     int screenHeight = 720;

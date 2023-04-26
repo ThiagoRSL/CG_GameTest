@@ -2,67 +2,38 @@
 
 RenderManager::RenderManager()
 {
-    this->lastInteracted = nullptr;
+
 }
 
 void RenderManager::RenderAll()
 {
     int i;
-    for (i = 0; i < elementsRenderList.size(); i++)
+    for (i = 0; i < renderList.size(); i++)
     {
-        elementsRenderList.at(i)->Render();
+        renderList.at(i)->Render();
     }
 }
-Element* RenderManager::CreateElement(float vx[], float vy[], int vertexes, float* background_color, float* border_color)
-{
-    Element* newElement = new Element(vx, vy, vertexes, background_color, border_color);
-    elementsRenderList.push_back(newElement);
-    return newElement;
-}
-Element* RenderManager::CreateElement(float vx[], float vy[], int vertexes, float* background_color, float* border_color, bool interactable)
-{
-    Element* newElement = new Element(vx, vy, vertexes,background_color, border_color);
-    newElement->SetInteractable(interactable);
-    elementsRenderList.push_back(newElement);
-    return newElement;
-}
-ButtonElement* RenderManager::CreateButtonElement(float* vx, float* vy, int vertexes, float* background_color, float* border_color, void (*callback_function)())
-{
-    ButtonElement* newElement = new ButtonElement(vx, vy, vertexes, background_color, border_color, callback_function);
-    elementsRenderList.push_back(newElement);
-    return newElement;
-}
-SliderElement* RenderManager::CreateSliderElement(float* vx, float* vy, int vertexes, float* background_color, float* border_color)
-{
-    SliderElement* newElement = new SliderElement(vx, vy, vertexes, background_color, border_color);
-    elementsRenderList.push_back(newElement);
-    return newElement;
-}
-SliderElement* RenderManager::CreateSliderElement(float* vx, float* vy, int vertexes, float* background_color, float* border_color, char* label, int label_length)
-{
-    SliderElement* newElement = new SliderElement(vx, vy, vertexes, background_color, border_color, label, label_length);
-    elementsRenderList.push_back(newElement);
-    return newElement;
-}
-SliderElement* RenderManager::CreateSliderElement(float* vx, float* vy, int vertexes, float* background_color, float* border_color, char* label, int label_length, int label_side)
-{
-    SliderElement* newElement = new SliderElement(vx, vy, vertexes, background_color, border_color, label, label_length, label_side);
-    elementsRenderList.push_back(newElement);
-    return newElement;
-}
-void RenderManager::SetFirstPosition(Element* element)
+
+void RenderManager::SetFirstPosition(Renderable* element)
 {
     int i;
-    for (i = 0; i < elementsRenderList.size(); i++)
+    for (i = 0; i < renderList.size(); i++)
     {
-        if(elementsRenderList.at(i) == element)
+        if(renderList.at(i) == element)
         {
-            elementsRenderList.erase(elementsRenderList.begin()+i);
-            elementsRenderList.push_back(element);
+            renderList.erase(renderList.begin()+i);
+            renderList.push_back(element);
         }
     }
 }
-bool RenderManager::VerifyMouseInteraction(int x, int y, int button, int state)
+
+void RenderManager::AddRenderableToList(Renderable* element)
+{
+    renderList.push_back(element);
+}
+
+
+/*bool RenderManager::VerifyMouseInteraction(int x, int y, int button, int state)
 {
     if(lastInteracted != nullptr && button == 0 && state == 1)
     {
@@ -94,4 +65,4 @@ bool RenderManager::VerifyMouseInteraction(int x, int y, int button, int state)
     }
     if(!collideSomething && changedCursor) glutSetCursor(GLUT_CURSOR_LEFT_ARROW);
     return false;
-}
+}*/

@@ -480,14 +480,13 @@
 
 1681341529 c:\users\thiago\desktop\grad\cg\jogomanager\src\mousemanager.h
 
-1681341529 c:\users\thiago\desktop\grad\cg\jogomanager\src\gl_canvas2d.h
+1682522561 c:\users\thiago\desktop\grad\cg\jogomanager\src\gl_canvas2d.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
-	"Vector2.h"
 
 1681341529 c:\users\thiago\desktop\grad\cg\jogomanager\include\gl\glut.h
 	"freeglut_std.h"
@@ -515,15 +514,13 @@
 	"Element.h"
 	"RenderManager.h"
 
-1682116617 c:\users\thiago\desktop\grad\cg\jogomanager\src\rendermanager.h
+1682522723 c:\users\thiago\desktop\grad\cg\jogomanager\src\rendermanager.h
 	<stdlib.h>
 	<algorithm>
 	<iostream>
 	<vector>
 	"MouseManager.h"
-	"Element.h"
-	"ButtonElement.h"
-	"SliderElement.h"
+	"Renderable.h"
 
 1682118423 c:\users\thiago\desktop\grad\cg\jogomanager\src\sliderelement.h
 	"Element.h"
@@ -560,11 +557,11 @@
 1682121050 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\geometryaux.cpp
 	"GeometryAux.h"
 
-1681580258 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\gl_canvas2d.cpp
+1682522590 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1682442909 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\main.cpp
+1682521084 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -583,16 +580,16 @@
 1681341529 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\mousemanager.cpp
 	"MouseManager.h"
 
-1682116658 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\rendermanager.cpp
+1682522879 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\rendermanager.cpp
 	"RenderManager.h"
 
 1682124950 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\sliderelement.cpp
 	"SliderElement.h"
 
-1682442579 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\vec2.cpp
+1682521200 source:c:\users\thiago\desktop\grad\cg\jogomanager\src\vec2.cpp
 	"Vec2.h"
 
-1682443127 c:\users\thiago\desktop\grad\cg\jogomanager\src\vec2.h
+1682520988 c:\users\thiago\desktop\grad\cg\jogomanager\src\vec2.h
 	<math.h>
 	"Renderable.h"
 	"gl_canvas2d.h"

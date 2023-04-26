@@ -5,6 +5,8 @@
 #include "Renderable.h"
 #include "gl_canvas2d.h"
 
+#define PI 3.141992
+
 class Vec2 : public Renderable
 {
     public:
@@ -15,6 +17,8 @@ class Vec2 : public Renderable
         Vec2(float v[2]);
         Vec2(float x, float y);
 
+        // Setters
+        void SetAnchor(float x, float y);
         // Getters
         float GetNorm();
 
@@ -27,11 +31,17 @@ class Vec2 : public Renderable
         {
             return Vec2(this->x * e, this->y * e);
         }
+        // Operações no próprio vetor
+        void Mult(float scalar);
+        void Sum(float scalar);
+        void Sum(Vec2* v2);
+        void Sub(Vec2* v2);
 
         // Normaliza o proprio vetor
         void Normalize();
         // Rotaciona o vetor em alguns graus
-        void Rotate(float degrees);
+        void RotateDegrees(float degrees);
+        void RotateRadians(float radians);
 
         void Render();
 
