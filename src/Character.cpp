@@ -1,15 +1,17 @@
 #include "Character.h"
 
-static int death_frames = 50;
+static int death_frames = 20;
 
 Character::Character(float x, float y, float RGB[3])
     : Poly(x, y)
 {
     this->dying = false;
     this->hit_points = 25;
+    this->base_damage = 10;
     this->rotating = 0;
     this->moving = 0;
-
+    this->movement_speed = 500;
+    this->rotation_speed = 200;
 
 
     this->background_color[0] = RGB[0];
@@ -32,7 +34,7 @@ void Character::SetMoving(float movement)
 
 void Character::Shoot()
 {
-    Projectile* shotPoly = new Projectile(this->anchor->x, this->anchor->y, this);
+    Projectile* shotPoly = new Projectile(this->anchor->x, this->anchor->y, this->base_damage, this);
     shotPoly->AddVertex(this->anchor->x - 5, this->anchor->y - 5);
     shotPoly->AddVertex(this->anchor->x + 5, this->anchor->y - 5);
     shotPoly->AddVertex(this->anchor->x + 5, this->anchor->y + 5);
@@ -79,11 +81,11 @@ void Character::Render()
     }
     if(moving)
     {
-        Move(moving*500/FPSManager::shared_instance().GetFrames());
+        Move(moving*movement_speed/FPSManager::shared_instance().GetFrames());
     }
     if(rotating)
     {
-        Rotate(rotating*200/FPSManager::shared_instance().GetFrames());
+        Rotate(rotating*rotation_speed/FPSManager::shared_instance().GetFrames());
     }
 
     Poly::Render();

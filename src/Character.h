@@ -21,6 +21,9 @@ class Character : public Poly
     protected:
 
     private:
+        float movement_speed;
+        float rotation_speed;
+        float base_damage;
         float rotating;
         float moving;
         float hit_points;

@@ -9,11 +9,12 @@ class Character;
 class Projectile : public Poly
 {
     public:
-        Projectile(float x, float y, Character* Owner);
+        Projectile(float x, float y, float damage, Character* Owner);
         void DestroyProjectile();
 
         void Render();
     protected:
+        float damage;
         Character* Owner;
 
     private:

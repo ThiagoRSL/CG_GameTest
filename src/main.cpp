@@ -160,8 +160,8 @@ int main(void)
     control_rotating_left = false;
     control_moving = false;
 
-    float RGB[3] = {0.5,0.2,0.2};
-    float RGB2[3] = {0.2,0.5,0.2};
+    float RGB[3] = {0.0,0.75,0.75};
+    float RGB2[3] = {0.75,0.0,0.75};
    //Sleep(1000);
     player_character = new Character(400, 400, RGB);
     player_character->AddVertex(-20,-25);
