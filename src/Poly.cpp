@@ -122,7 +122,6 @@ bool Poly::HasCollision(float x, float y)
         {
             counter += 1;
         }
-        if(counter%2 == 1) printf("SIM!");
         if(counter%2 == 1) return true;
     }
 

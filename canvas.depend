@@ -644,13 +644,15 @@
 1682730034 c:\users\nektus\desktop\grad\cg_gametest\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1682744562 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
+1682789099 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
 	<stdio.h>
 	<stdlib.h>
 	<string>
+	<set>
+	<iterator>
 	"gl_canvas2d.h"
 	"FileManager.h"
 	"MouseManager.h"
@@ -684,7 +686,7 @@
 1682730034 source:c:\users\nektus\desktop\grad\cg_gametest\src\renderable.cpp
 	"Renderable.h"
 
-1682730034 source:c:\users\nektus\desktop\grad\cg_gametest\src\rendermanager.cpp
+1682787040 source:c:\users\nektus\desktop\grad\cg_gametest\src\rendermanager.cpp
 	"RenderManager.h"
 
 1682735500 source:c:\users\nektus\desktop\grad\cg_gametest\src\vec2.cpp
@@ -718,7 +720,7 @@
 	<stdio.h>
 	<time.h>
 
-1682745727 source:c:\users\nektus\desktop\grad\cg_gametest\src\projectile.cpp
+1682787041 source:c:\users\nektus\desktop\grad\cg_gametest\src\projectile.cpp
 	"Projectile.h"
 	"Character.h"
 

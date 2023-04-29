@@ -32,7 +32,6 @@ void RenderManager::AddRenderableToList(Renderable* element)
     renderList.push_back(element);
 }
 
-
 /*bool RenderManager::VerifyMouseInteraction(int x, int y, int button, int state)
 {
     if(lastInteracted != nullptr && button == 0 && state == 1)

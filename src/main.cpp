@@ -20,6 +20,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
+#include <set>
+#include <iterator>
 
 #include "gl_canvas2d.h"
 #include "FileManager.h"
@@ -31,6 +33,8 @@
 #include "Character.h"
 
 Character* player_character;
+
+std::set<int> PressedKeys;
 
 float moving;
 int rotating;
@@ -55,6 +59,12 @@ void keyboard(int key)
 {
     printf("\nTecla: %d" , key);
 
+    if(PressedKeys.find(key) != PressedKeys.end())
+    {
+        return;
+    }
+    PressedKeys.insert(key);
+
     switch(key)
     {
       //seta para a esquerda
@@ -67,30 +77,16 @@ void keyboard(int key)
         player_character->Shoot();
       break;
       case 200:
-        if(!control_rotating_left)
-        {
             rotating = -1;
-        }
       break;
       case 201:
-        if(!control_moving)
-        {
-            control_moving = true;
             moving = 1;
-        }
       break;
       case 202:
-        if(!control_rotating_right)
-        {
             rotating = 1;
-        }
       break;
       case 203:
-        if(!control_moving)
-        {
-            control_moving = true;
             moving = -0.5;
-        }
       break;
     }
 }
@@ -99,44 +95,52 @@ void keyboard(int key)
 void keyboardUp(int key)
 {
     printf("\nLiberou: %d" , key);
-
-   switch(key)
-   {
+    if(PressedKeys.find(key) != PressedKeys.end())
+        PressedKeys.erase(PressedKeys.find(key));
+    switch(key)
+    {
       case 27:
-	     //exit(0);
-	  break;
-	  //tecla "I"
+         //exit(0);
+      break;
+      //tecla "I"
       case 105:
-	    // debugMode = !debugMode;
+        // debugMode = !debugMode;
         break;
-	  case 107:
+      case 107:
         //ClearAllFigures();
         break;
-	  case 108:
+      case 108:
         //LoadSave();
         break;
-	  case 109:
+      case 109:
         //FileManager::shared_instance().SaveData(SavedFilePath, FigureManager::shared_instance().GetFiguresAsString(), FigureManager::shared_instance().CountFigures());
         break;
-	  //seta para a esquerda
+      //seta para a esquerda
       case 200:
-        control_rotating_left = false;
-        control_rotating_right = false;
-        rotating = 0;
-	  break;
+        if(PressedKeys.find(202) != PressedKeys.end())
+            rotating = 1;
+        else
+            rotating = 0;
+      break;
       case 201:
-        control_moving = false;
-        moving = false;
-	  break;
-	  case 202:
-        control_rotating_right = false;
-        control_rotating_left = false;
-        rotating = 0;
-	  break;
+        if(PressedKeys.find(203) != PressedKeys.end())
+            moving = -0.5;
+        else
+            moving = 0;
+      break;
+      case 202:
+        if(PressedKeys.find(200) != PressedKeys.end())
+            rotating = -1;
+        else
+            rotating = 0;
+      break;
       case 203:
-	    //poly->Resize(2);
-	  break;
-   }
+        if(PressedKeys.find(201) != PressedKeys.end())
+            moving = 1;
+        else
+            moving = 0;
+      break;
+    }
 }
 
 //funcao para tratamento de mouse: cliques, movimentos e arrastos
