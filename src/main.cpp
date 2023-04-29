@@ -27,6 +27,10 @@
 #include "RenderManager.h"
 #include "Vec2.h"
 #include "Poly.h"
+#include "Frames.h"
+
+Frames  * frames;
+float     fps = 100.0;  //valor inicial
 Poly* poly;
 
 bool moving;
@@ -36,11 +40,11 @@ void render()
 {
     CV::clear(0,0,0);
     RenderManager::shared_instance().RenderAll();
-
+    fps = frames->getFrames();
     if(moving)
-        poly->Move(1);
+        poly->Move(100/fps);
     if(rotating != 0)
-        poly->Rotate(rotating);
+        poly->Rotate(rotating*100/fps);
 }
 
 
@@ -120,6 +124,7 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
 int main(void)
 {
+    frames = new Frames();
    //Sleep(1000);
     poly = new Poly(400, 400);
     poly->AddVertex(-20,-25);
