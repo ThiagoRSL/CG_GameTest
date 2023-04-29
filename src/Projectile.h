@@ -10,8 +10,9 @@ class Projectile : public Poly
 {
     public:
         Projectile(float x, float y, Character* Owner);
-        void Render();
+        void DestroyProjectile();
 
+        void Render();
     protected:
         Character* Owner;
 

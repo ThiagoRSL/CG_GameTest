@@ -5,6 +5,7 @@
 #include <vector>
 #include "Vec2.h"
 #include "RenderManager.h"
+#include "CollisionManager.h"
 #include "GeometryAux.h"
 
 class Poly : public Renderable

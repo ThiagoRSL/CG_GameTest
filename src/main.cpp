@@ -27,6 +27,7 @@
 #include "FileManager.h"
 #include "MouseManager.h"
 #include "RenderManager.h"
+#include "CollisionManager.h"
 #include "Vec2.h"
 #include "Poly.h"
 #include "FPSManager.h"
@@ -77,16 +78,16 @@ void keyboard(int key)
         player_character->Shoot();
       break;
       case 200:
-            rotating = -1;
+        rotating = -1;
       break;
       case 201:
-            moving = 1;
+        moving = 1;
       break;
       case 202:
-            rotating = 1;
+        rotating = 1;
       break;
       case 203:
-            moving = -0.5;
+        moving = -0.5;
       break;
     }
 }
@@ -172,7 +173,18 @@ int main(void)
     player_character->AddVertex(20,25);
     player_character->AddVertex(-20,25);
 
+    Character* enemy_character = new Character(600, 600);
+    enemy_character->AddVertex(-20,-25);
+    enemy_character->AddVertex(-10,-40);
+    enemy_character->AddVertex(10,-40);
+    enemy_character->AddVertex(20,-25);
+    enemy_character->AddVertex(20,25);
+    enemy_character->AddVertex(-20,25);
+
     RenderManager::shared_instance().AddRenderableToList(player_character);
+    RenderManager::shared_instance().AddRenderableToList(enemy_character);
+    CollisionManager::shared_instance().SetPlayerCharacter(player_character);
+    CollisionManager::shared_instance().AddNPC(enemy_character);
 
     int screenWidth = 1080;
     int screenHeight = 720;

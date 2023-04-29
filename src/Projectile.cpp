@@ -13,7 +13,17 @@ void Projectile::Render()
     {
         CV::color(0,0,255);
         CV::circleFill(this->anchor->x, this->anchor->y, 5, 30);
+
+        if(Character* enemy = CollisionManager::shared_instance().VerifyCollision(this->anchor->x, this->anchor->y))
+        {
+            DestroyProjectile();
+            enemy->ReceiveDamage(10);
+        }
     }
-    //RenderManager::shared_instance().HasCollidedWith();
     this->Move(1000/FPSManager::shared_instance().GetFrames());
+}
+
+void Projectile::DestroyProjectile()
+{
+    RenderManager::shared_instance().RemoveRenderableFromList(this);
 }

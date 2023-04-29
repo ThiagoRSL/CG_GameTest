@@ -644,7 +644,7 @@
 1682730034 c:\users\nektus\desktop\grad\cg_gametest\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1682789099 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
+1682791304 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -657,6 +657,7 @@
 	"FileManager.h"
 	"MouseManager.h"
 	"RenderManager.h"
+	"CollisionManager.h"
 	"Vec2.h"
 	"Poly.h"
 	"FPSManager.h"
@@ -664,7 +665,7 @@
 
 1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\mousemanager.h
 
-1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\rendermanager.h
+1682790209 c:\users\nektus\desktop\grad\cg_gametest\src\rendermanager.h
 	<stdlib.h>
 	<algorithm>
 	<iostream>
@@ -686,7 +687,7 @@
 1682730034 source:c:\users\nektus\desktop\grad\cg_gametest\src\renderable.cpp
 	"Renderable.h"
 
-1682787040 source:c:\users\nektus\desktop\grad\cg_gametest\src\rendermanager.cpp
+1682791094 source:c:\users\nektus\desktop\grad\cg_gametest\src\rendermanager.cpp
 	"RenderManager.h"
 
 1682735500 source:c:\users\nektus\desktop\grad\cg_gametest\src\vec2.cpp
@@ -700,14 +701,15 @@
 	<vector>
 	"Vec2.h"
 
-1682745845 source:c:\users\nektus\desktop\grad\cg_gametest\src\poly.cpp
+1682789272 source:c:\users\nektus\desktop\grad\cg_gametest\src\poly.cpp
 	"Poly.h"
 
-1682745097 c:\users\nektus\desktop\grad\cg_gametest\src\poly.h
+1682791597 c:\users\nektus\desktop\grad\cg_gametest\src\poly.h
 	<stdio.h>
 	<vector>
 	"Vec2.h"
 	"RenderManager.h"
+	"CollisionManager.h"
 	"GeometryAux.h"
 
 1682736961 c:\users\nektus\desktop\grad\cg_gametest\src\pnt2.h
@@ -720,18 +722,19 @@
 	<stdio.h>
 	<time.h>
 
-1682787041 source:c:\users\nektus\desktop\grad\cg_gametest\src\projectile.cpp
+1682791384 source:c:\users\nektus\desktop\grad\cg_gametest\src\projectile.cpp
 	"Projectile.h"
 	"Character.h"
+	"CollisionManager.h"
 
-1682745278 c:\users\nektus\desktop\grad\cg_gametest\src\projectile.h
+1682791360 c:\users\nektus\desktop\grad\cg_gametest\src\projectile.h
 	"FPSManager.h"
 	"Poly.h"
 
-1682745304 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
+1682791245 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
 	"Character.h"
 
-1682743001 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
+1682791563 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
 	"Poly.h"
 	"Projectile.h"
 
@@ -741,4 +744,10 @@
 1682744585 c:\users\nektus\desktop\grad\cg_gametest\src\fpsmanager.h
 	<stdio.h>
 	<time.h>
+
+1682791569 source:c:\users\nektus\desktop\grad\cg_gametest\src\collisionmanager.cpp
+	"CollisionManager.h"
+
+1682791716 c:\users\nektus\desktop\grad\cg_gametest\src\collisionmanager.h
+	<vector>
 

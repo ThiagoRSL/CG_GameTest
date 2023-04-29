@@ -31,6 +31,17 @@ void RenderManager::AddRenderableToList(Renderable* element)
 {
     renderList.push_back(element);
 }
+void RenderManager::RemoveRenderableFromList(Renderable* element)
+{
+    int i;
+    for (i = 0; i < renderList.size(); i++)
+    {
+        if(renderList.at(i) == element)
+        {
+            renderList.erase(renderList.begin()+i);
+        }
+    }
+}
 
 /*bool RenderManager::VerifyMouseInteraction(int x, int y, int button, int state)
 {
