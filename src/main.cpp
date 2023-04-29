@@ -27,24 +27,27 @@
 #include "RenderManager.h"
 #include "Vec2.h"
 #include "Poly.h"
-#include "Frames.h"
+#include "FPSManager.h"
+#include "Character.h"
 
-Frames  * frames;
-float     fps = 100.0;  //valor inicial
-Poly* poly;
+Character* player_character;
 
 bool moving;
 int rotating;
 
+bool control_rotating_right;
+bool control_rotating_left;
+bool control_moving;
+
 void render()
 {
     CV::clear(0,0,0);
+    FPSManager::shared_instance().UpdateFrames();
     RenderManager::shared_instance().RenderAll();
-    fps = frames->getFrames();
     if(moving)
-        poly->Move(100/fps);
+        player_character->Move(500/FPSManager::shared_instance().GetFrames());
     if(rotating != 0)
-        poly->Rotate(rotating*100/fps);
+        player_character->Rotate(rotating*200/FPSManager::shared_instance().GetFrames());
 }
 
 
@@ -55,14 +58,32 @@ void keyboard(int key)
     switch(key)
     {
       //seta para a esquerda
+      case 99:
+        //tecla C
+      case 120:
+        //tecla X
+      case 122:
+        //tecla Z
+        player_character->Shoot();
+      break;
       case 200:
-        rotating = -1;
+        if(!control_rotating_left)
+        {
+            rotating = -1;
+        }
       break;
       case 201:
-        moving = true;
+        if(!control_moving)
+        {
+            control_moving = true;
+            moving = true;
+        }
       break;
       case 202:
-        rotating = 1;
+        if(!control_rotating_right)
+        {
+            rotating = 1;
+        }
       break;
       case 203:
       break;
@@ -94,12 +115,17 @@ void keyboardUp(int key)
         break;
 	  //seta para a esquerda
       case 200:
+        control_rotating_left = false;
+        control_rotating_right = false;
         rotating = 0;
 	  break;
       case 201:
+        control_moving = false;
         moving = false;
 	  break;
 	  case 202:
+        control_rotating_right = false;
+        control_rotating_left = false;
         rotating = 0;
 	  break;
       case 203:
@@ -118,23 +144,26 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
     if(button == 0 && state == 0)
     {
-        poly->SetAnchor(x, y);
+        player_character->SetAnchor(x, y);
     }
 }
 
 int main(void)
 {
-    frames = new Frames();
-   //Sleep(1000);
-    poly = new Poly(400, 400);
-    poly->AddVertex(-20,-25);
-    poly->AddVertex(-10,-40);
-    poly->AddVertex(10,-40);
-    poly->AddVertex(20,-25);
-    poly->AddVertex(20,25);
-    poly->AddVertex(-20,25);
+    control_rotating_right = false;
+    control_rotating_left = false;
+    control_moving = false;
 
-    RenderManager::shared_instance().AddRenderableToList(poly);
+   //Sleep(1000);
+    player_character = new Character(400, 400);
+    player_character->AddVertex(-20,-25);
+    player_character->AddVertex(-10,-40);
+    player_character->AddVertex(10,-40);
+    player_character->AddVertex(20,-25);
+    player_character->AddVertex(20,25);
+    player_character->AddVertex(-20,25);
+
+    RenderManager::shared_instance().AddRenderableToList(player_character);
 
     int screenWidth = 1080;
     int screenHeight = 720;

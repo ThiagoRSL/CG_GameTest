@@ -8,10 +8,6 @@
 #ifndef _FRAMES_H___
 #define _FRAMES_H___
 
-#include <stdio.h>
-#include <time.h>
-
-#define UPDATE_RATE 30   //milisegundos
 
 
 

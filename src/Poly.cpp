@@ -23,6 +23,11 @@ void Poly::SetAnchor(float x, float y)
     this->anchor->x = x;
     this->anchor->y = y;
 }
+void Poly::SetOrientation(float x, float y)
+{
+    this->orientationVector.x = x;
+    this->orientationVector.y = y;
+}
 
 void Poly::AddVertex(Vec2* vertex)
 {
@@ -80,7 +85,6 @@ void Poly::RenderBody()
     }
 }
 
-
 void Poly::RenderBorder()
 {
 
@@ -93,4 +97,34 @@ void Poly::RenderVertexes()
     {
         Vertexes.at(i)->Render();
     }
+}
+
+bool Poly::HasCollision(float x, float y)
+{
+    int i, a;
+    for(i = 0; i < Vertexes.size(); i++)
+    {
+        if(i != Vertexes.size()-1)
+            a = i+1;
+        else
+            a = 0;
+
+        int counter = 0;
+        if(GeometryAux::Intercept(8000, 8000, x, y, this->anchor->x, this->anchor->y, anchor->x - this->Vertexes.at(i)->x, anchor->y - this->Vertexes.at(i)->y))
+        {
+            counter += 1;
+        }
+        if(GeometryAux::Intercept(8000, 8000, x, y, this->anchor->x, this->anchor->y, anchor->x - this->Vertexes.at(a)->x, anchor->y - this->Vertexes.at(a)->y))
+        {
+            counter += 1;
+        }
+        if(GeometryAux::Intercept(8000, 8000, x, y, anchor->x - this->Vertexes.at(i)->x, anchor->y - this->Vertexes.at(i)->y, anchor->x - this->Vertexes.at(a)->x, anchor->y - this->Vertexes.at(a)->y))
+        {
+            counter += 1;
+        }
+        if(counter%2 == 1) printf("SIM!");
+        if(counter%2 == 1) return true;
+    }
+
+    return false;
 }

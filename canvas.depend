@@ -644,7 +644,7 @@
 1682730034 c:\users\nektus\desktop\grad\cg_gametest\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1682737035 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
+1682744562 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -657,6 +657,8 @@
 	"RenderManager.h"
 	"Vec2.h"
 	"Poly.h"
+	"FPSManager.h"
+	"Character.h"
 
 1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\mousemanager.h
 
@@ -696,17 +698,45 @@
 	<vector>
 	"Vec2.h"
 
-1682737039 source:c:\users\nektus\desktop\grad\cg_gametest\src\poly.cpp
+1682745604 source:c:\users\nektus\desktop\grad\cg_gametest\src\poly.cpp
 	"Poly.h"
 
-1682736126 c:\users\nektus\desktop\grad\cg_gametest\src\poly.h
+1682745097 c:\users\nektus\desktop\grad\cg_gametest\src\poly.h
 	<stdio.h>
 	<vector>
 	"Vec2.h"
+	"RenderManager.h"
+	"GeometryAux.h"
 
 1682736961 c:\users\nektus\desktop\grad\cg_gametest\src\pnt2.h
 
 1682737103 source:c:\users\nektus\desktop\grad\cg_gametest\src\pnt2.cpp
 	"Pnt2.h"
 	"Vec2.h"
+
+1682739121 c:\users\nektus\desktop\grad\cg_gametest\src\frames.h
+	<stdio.h>
+	<time.h>
+
+1682745727 source:c:\users\nektus\desktop\grad\cg_gametest\src\projectile.cpp
+	"Projectile.h"
+	"Character.h"
+
+1682745278 c:\users\nektus\desktop\grad\cg_gametest\src\projectile.h
+	"FPSManager.h"
+	"Poly.h"
+
+1682745304 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
+	"Character.h"
+
+1682743001 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
+	"Poly.h"
+	"Projectile.h"
+
+1682744541 source:c:\users\nektus\desktop\grad\cg_gametest\src\fpsmanager.cpp
+	"FPSManager.h"
+
+1682744585 c:\users\nektus\desktop\grad\cg_gametest\src\fpsmanager.h
+	<stdio.h>
+	<time.h>
 
