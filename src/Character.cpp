@@ -7,6 +7,11 @@ Character::Character(float x, float y, float RGB[3])
 {
     this->dying = false;
     this->hit_points = 25;
+    this->rotating = 0;
+    this->moving = 0;
+
+
+
     this->background_color[0] = RGB[0];
     this->background_color[1] = RGB[1];
     this->background_color[2] = RGB[2];
@@ -15,6 +20,14 @@ Character::Character(float x, float y, float RGB[3])
     this->death_rgb_save[0] = 1 - this->background_color[0];
     this->death_rgb_save[1] = (1 - this->background_color[1])/4;
     this->death_rgb_save[2] = - this->background_color[2];
+}
+void Character::SetRotating(float degree)
+{
+    this->rotating = degree;
+}
+void Character::SetMoving(float movement)
+{
+    this->moving = movement;
 }
 
 void Character::Shoot()
@@ -58,7 +71,20 @@ void Character::Die()
 void Character::Render()
 {
     if(dying)
+    {
         this->AnimateDeath();
         if(death_frame == death_frames) this->Die();
+        Poly::Render();
+        return;
+    }
+    if(moving)
+    {
+        Move(moving*500/FPSManager::shared_instance().GetFrames());
+    }
+    if(rotating)
+    {
+        Rotate(rotating*200/FPSManager::shared_instance().GetFrames());
+    }
+
     Poly::Render();
 }

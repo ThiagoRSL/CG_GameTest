@@ -9,6 +9,8 @@ class Character : public Poly
     public:
         Character(float x, float y, float RGB[3]);
 
+        void SetRotating(float degree);
+        void SetMoving(float movement);
         void Shoot();
         void ReceiveDamage(float damage);
         void AnimateDeath();
@@ -19,6 +21,8 @@ class Character : public Poly
     protected:
 
     private:
+        float rotating;
+        float moving;
         float hit_points;
         float speed;
         bool dying;

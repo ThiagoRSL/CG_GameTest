@@ -49,10 +49,6 @@ void render()
     CV::clear(0,0,0);
     FPSManager::shared_instance().UpdateFrames();
     RenderManager::shared_instance().RenderAll();
-    if(moving)
-        player_character->Move(moving*500/FPSManager::shared_instance().GetFrames());
-    if(rotating != 0)
-        player_character->Rotate(rotating*200/FPSManager::shared_instance().GetFrames());
 }
 
 
@@ -78,16 +74,16 @@ void keyboard(int key)
         player_character->Shoot();
       break;
       case 200:
-        rotating = -1;
+        player_character->SetRotating(-1);
       break;
       case 201:
-        moving = 1;
+        player_character->SetMoving(1);
       break;
       case 202:
-        rotating = 1;
+        player_character->SetRotating(1);
       break;
       case 203:
-        moving = -0.5;
+        player_character->SetMoving(-0.5);
       break;
     }
 }
@@ -119,27 +115,27 @@ void keyboardUp(int key)
       //seta para a esquerda
       case 200:
         if(PressedKeys.find(202) != PressedKeys.end())
-            rotating = 1;
+            player_character->SetRotating(1);
         else
-            rotating = 0;
+            player_character->SetRotating(0);
       break;
       case 201:
         if(PressedKeys.find(203) != PressedKeys.end())
-            moving = -0.5;
+            player_character->SetMoving(-0.5);
         else
-            moving = 0;
+            player_character->SetMoving(0);
       break;
       case 202:
         if(PressedKeys.find(200) != PressedKeys.end())
-            rotating = -1;
+            player_character->SetRotating(-1);
         else
-            rotating = 0;
+            player_character->SetRotating(0);
       break;
       case 203:
         if(PressedKeys.find(201) != PressedKeys.end())
-            moving = 1;
+            player_character->SetMoving(1);
         else
-            moving = 0;
+            player_character->SetMoving(0);
       break;
     }
 }

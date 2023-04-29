@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1682794183 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
+1682795263 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
 	"Character.h"
 
-1682793194 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
+1682795231 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
 	"Poly.h"
 	"Projectile.h"
 
@@ -97,7 +97,7 @@
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1682793125 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
+1682795129 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
