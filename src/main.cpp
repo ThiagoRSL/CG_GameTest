@@ -164,8 +164,10 @@ int main(void)
     control_rotating_left = false;
     control_moving = false;
 
+    float RGB[3] = {0.5,0.2,0.2};
+    float RGB2[3] = {0.2,0.5,0.2};
    //Sleep(1000);
-    player_character = new Character(400, 400);
+    player_character = new Character(400, 400, RGB);
     player_character->AddVertex(-20,-25);
     player_character->AddVertex(-10,-40);
     player_character->AddVertex(10,-40);
@@ -173,7 +175,7 @@ int main(void)
     player_character->AddVertex(20,25);
     player_character->AddVertex(-20,25);
 
-    Character* enemy_character = new Character(600, 600);
+    Character* enemy_character = new Character(600, 600, RGB2);
     enemy_character->AddVertex(-20,-25);
     enemy_character->AddVertex(-10,-40);
     enemy_character->AddVertex(10,-40);

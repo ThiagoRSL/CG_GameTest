@@ -70,7 +70,7 @@ void Poly::Render()
 
 void Poly::RenderBody()
 {
-    CV::color(255, 0, 0);
+    CV::color(background_color[0], background_color[1], background_color[2]);
     int i, a;
     for(i = 0; i < Vertexes.size(); i++)
     {
