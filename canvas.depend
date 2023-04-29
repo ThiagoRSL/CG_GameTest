@@ -599,3 +599,114 @@
 
 1682434171 c:\users\thiago\desktop\grad\cg\jogomanager\src\renderable.h
 
+1682730034 source:c:\users\nektus\desktop\grad\cg_gametest\src\filemanager.cpp
+	"FileManager.h"
+
+1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\filemanager.h
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<fstream>
+	<vector>
+
+1682730034 source:c:\users\nektus\desktop\grad\cg_gametest\src\geometryaux.cpp
+	"GeometryAux.h"
+
+1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\geometryaux.h
+	<math.h>
+
+1682737183 source:c:\users\nektus\desktop\grad\cg_gametest\src\gl_canvas2d.cpp
+	"gl_canvas2d.h"
+	<GL/glut.h>
+
+1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\gl_canvas2d.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+
+1682730034 c:\users\nektus\desktop\grad\cg_gametest\include\gl\glut.h
+	"freeglut_std.h"
+
+1682730034 c:\users\nektus\desktop\grad\cg_gametest\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1682730034 c:\users\nektus\desktop\grad\cg_gametest\include\gl\freeglut_ext.h
+	<stdarg.h>
+
+1682737035 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
+	<GL/glut.h>
+	<GL/freeglut_ext.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	"gl_canvas2d.h"
+	"FileManager.h"
+	"MouseManager.h"
+	"RenderManager.h"
+	"Vec2.h"
+	"Poly.h"
+
+1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\mousemanager.h
+
+1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\rendermanager.h
+	<stdlib.h>
+	<algorithm>
+	<iostream>
+	<vector>
+	"MouseManager.h"
+	"Renderable.h"
+
+1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\renderable.h
+
+1682736456 c:\users\nektus\desktop\grad\cg_gametest\src\vec2.h
+	<math.h>
+	"Renderable.h"
+	"gl_canvas2d.h"
+	"Pnt2.h"
+
+1682730034 source:c:\users\nektus\desktop\grad\cg_gametest\src\mousemanager.cpp
+	"MouseManager.h"
+
+1682730034 source:c:\users\nektus\desktop\grad\cg_gametest\src\renderable.cpp
+	"Renderable.h"
+
+1682730034 source:c:\users\nektus\desktop\grad\cg_gametest\src\rendermanager.cpp
+	"RenderManager.h"
+
+1682735500 source:c:\users\nektus\desktop\grad\cg_gametest\src\vec2.cpp
+	"Vec2.h"
+
+1682732628 source:c:\users\nektus\desktop\grad\cg_gametest\src\polygon.cpp
+	"Polygon.h"
+
+1682732586 c:\users\nektus\desktop\grad\cg_gametest\src\polygon.h
+	<stdio.h>
+	<vector>
+	"Vec2.h"
+
+1682737039 source:c:\users\nektus\desktop\grad\cg_gametest\src\poly.cpp
+	"Poly.h"
+
+1682736126 c:\users\nektus\desktop\grad\cg_gametest\src\poly.h
+	<stdio.h>
+	<vector>
+	"Vec2.h"
+
+1682736961 c:\users\nektus\desktop\grad\cg_gametest\src\pnt2.h
+
+1682737103 source:c:\users\nektus\desktop\grad\cg_gametest\src\pnt2.cpp
+	"Pnt2.h"
+	"Vec2.h"
+

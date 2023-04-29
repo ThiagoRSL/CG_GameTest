@@ -26,24 +26,44 @@
 #include "MouseManager.h"
 #include "RenderManager.h"
 #include "Vec2.h"
-Vec2* v1;
-Vec2* v2;
+#include "Poly.h"
+Poly* poly;
+
+bool moving;
+int rotating;
+
 void render()
 {
+    CV::clear(0,0,0);
     RenderManager::shared_instance().RenderAll();
+
+    if(moving)
+        poly->Move(1);
+    if(rotating != 0)
+        poly->Rotate(rotating);
 }
 
 
 void keyboard(int key)
 {
-   printf("\nTecla: %d" , key);
-   if( key < 200 )
-   {
-      //opcao = key;
-   }
+    printf("\nTecla: %d" , key);
 
+    switch(key)
+    {
+      //seta para a esquerda
+      case 200:
+        rotating = -1;
+      break;
+      case 201:
+        moving = true;
+      break;
+      case 202:
+        rotating = 1;
+      break;
+      case 203:
+      break;
+    }
 }
-
 
 //funcao chamada toda vez que uma tecla for liberada
 void keyboardUp(int key)
@@ -54,18 +74,6 @@ void keyboardUp(int key)
    {
       case 27:
 	     //exit(0);
-	  break;
-      case 50:
-	     v1->Mult(0.5);
-	  break;
-      case 52:
-	     v1->Sub(v2);
-	  break;
-      case 54:
-	     v1->Sum(v2);
-	  break;
-      case 56:
-	     v1->Mult(2);
 	  break;
 	  //tecla "I"
       case 105:
@@ -82,18 +90,16 @@ void keyboardUp(int key)
         break;
 	  //seta para a esquerda
       case 200:
-        v1->RotateDegrees(-5.0);
-        v2->RotateDegrees(-5.0);
+        rotating = 0;
 	  break;
       case 201:
-        v1->Normalize();
+        moving = false;
 	  break;
 	  case 202:
-        v1->RotateDegrees(5.0);//FigureManager::shared_instance().Rotate(DEGREES_ROTATION);
-        v2->RotateDegrees(5.0);//FigureManager::shared_instance().Rotate(DEGREES_ROTATION);
+        rotating = 0;
 	  break;
       case 203:
-        v1->Mult(2);
+	    //poly->Resize(2);
 	  break;
    }
 }
@@ -106,18 +112,24 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
 
     printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
 
-
+    if(button == 0 && state == 0)
+    {
+        poly->SetAnchor(x, y);
+    }
 }
 
 int main(void)
 {
-    v1 = new Vec2(300,100);
-    v2 = new Vec2(100,100);
-    v1->SetAnchor(500,500);
-    v2->SetAnchor(500,200);
+   //Sleep(1000);
+    poly = new Poly(400, 400);
+    poly->AddVertex(-20,-25);
+    poly->AddVertex(-10,-40);
+    poly->AddVertex(10,-40);
+    poly->AddVertex(20,-25);
+    poly->AddVertex(20,25);
+    poly->AddVertex(-20,25);
 
-    RenderManager::shared_instance().AddRenderableToList(v1);
-    RenderManager::shared_instance().AddRenderableToList(v2);
+    RenderManager::shared_instance().AddRenderableToList(poly);
 
     int screenWidth = 1080;
     int screenHeight = 720;

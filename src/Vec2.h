@@ -4,13 +4,14 @@
 #include <math.h>
 #include "Renderable.h"
 #include "gl_canvas2d.h"
+#include "Pnt2.h"
 
 #define PI 3.141992
 
 class Vec2 : public Renderable
 {
     public:
-        float anchor_x, anchor_y;
+        Pnt2* anchor;
         float x, y;
 
         Vec2();
@@ -18,18 +19,19 @@ class Vec2 : public Renderable
         Vec2(float x, float y);
 
         // Setters
-        void SetAnchor(float x, float y);
+        void SetAnchor(Pnt2* point);
         // Getters
         float GetNorm();
 
-        // Sobrecarga de Operadores
-        //inline vetor operator + ( const vetor v )
-        inline Vec2 operator + (const Vec2 v2) const;
-        inline Vec2 operator - (const Vec2 v2) const;
-        inline Vec2 operator * (const Vec2 v2) const;
-        inline Vec2 operator * (const float& e) const
+        Vec2 operator* (const float& scalar)
         {
-            return Vec2(this->x * e, this->y * e);
+            Vec2 aux(x * scalar, y * scalar);
+            return (aux);
+        }
+        Vec2 operator+ (const Vec2& vec)
+        {
+            Vec2 aux(x + vec.x, y + vec.y);
+            return (aux);
         }
         // Operações no próprio vetor
         void Mult(float scalar);
@@ -37,6 +39,7 @@ class Vec2 : public Renderable
         void Sum(Vec2* v2);
         void Sub(Vec2* v2);
 
+        void ApplyAtPoint();
         // Normaliza o proprio vetor
         void Normalize();
         // Rotaciona o vetor em alguns graus

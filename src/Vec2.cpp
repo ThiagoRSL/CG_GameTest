@@ -5,53 +5,33 @@ Vec2::Vec2()
 {
     this->x = 0;
     this->y = 0;
-    this->anchor_x = 0;
-    this->anchor_y = 0;
+    this->anchor = nullptr;
 }
 
 Vec2::Vec2(float v[2])
 {
     this->x = v[0];
     this->y = v[1];
-    this->anchor_x = 0;
-    this->anchor_y = 0;
+    this->anchor = nullptr;
 }
 
 Vec2::Vec2(float x, float y)
 {
     this->x = x;
     this->y = y;
-    this->anchor_x = 0;
-    this->anchor_y = 0;
+    this->anchor = nullptr;
 }
 
 // Setters
-void Vec2::SetAnchor(float x, float y)
+void Vec2::SetAnchor(Pnt2* point)
 {
-    this->anchor_x = x;
-    this->anchor_y = y;
+    this->anchor = point;
 }
 
 // Getters
 float Vec2::GetNorm()
 {
     return sqrtf((x*x) + (y*y));
-}
-
-
-// Sobrecarga de operadores +, - e *
-
-inline Vec2 Vec2::operator + (const Vec2 v2) const
-{
-    return Vec2(this->x + v2.x, this->y + v2.y);
-}
-inline Vec2 Vec2::operator - (const Vec2 v2) const
-{
-    return Vec2(this->x - v2.x, this->y - v2.y);
-}
-inline Vec2 Vec2::operator * (const Vec2 v2) const
-{
-    return Vec2(this->x * v2.x, this->y * v2.y);
 }
 
 //Operações no próprio vetor
@@ -101,10 +81,10 @@ void Vec2::RotateRadians(float radians)
 void Vec2::Render()
 {
     CV::color(1);
-    CV::circle(this->anchor_x, this->anchor_y, 10, 30);
+    CV::circle(this->anchor->x, this->anchor->y, 10, 30);
     CV::color(2);
-    CV::line(this->anchor_x, this->anchor_y, this->x + this->anchor_x, this->y + this->anchor_y);
+    CV::line(this->anchor->x, this->anchor->y, this->x + this->anchor->y, this->y + this->anchor->y);
     CV::color(3);
-    CV::circle(this->x + this->anchor_x, this->y + this->anchor_y, 10, 30);
+    CV::circle(this->x + this->anchor->y, this->y + this->anchor->y, 10, 30);
 }
 

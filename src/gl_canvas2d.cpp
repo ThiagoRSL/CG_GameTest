@@ -42,6 +42,7 @@ void ConvertMouseCoord(int button, int state, int wheel, int direction, int x, i
 //funcoes de CALLBACK da biblioteca Glut
 void keyboard(int key);
 void keyboardUp(int key);
+void keyboardDown(int key);
 void specialUp(int key);
 void mouse(int bt, int st, int wheel, int direction, int x, int y);
 void mouseWheelCB(int wheel, int direction, int x, int y);
