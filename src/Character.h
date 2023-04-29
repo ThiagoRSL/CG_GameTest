@@ -39,6 +39,7 @@ class Character : public Poly
 
     //Getters e Setters
     public:
+        bool IsDying() {return this->dying;}
         bool IsDead() {return this->dead;}
         Pnt2* GetAnchor() {return this->anchor;}
 

@@ -35,7 +35,7 @@ Character* CollisionManager::VerifyCollisionNPCs(float x, float y)
     for(i = 0; i < npcs.size(); i++)
     {
         actual = npcs.at(i);
-        if(actual->HasCollision(x, y))
+        if(!actual->IsDead() && !actual->IsDying() && actual->HasCollision(x, y))
         {
             return actual;
         }

@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1682809207 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
+1682809775 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
 	"Character.h"
 
-1682808814 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
+1682809529 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
 	<math.h>
 	"Poly.h"
 	"Projectile.h"
@@ -74,7 +74,7 @@
 	<stdio.h>
 	<time.h>
 
-1682807993 source:c:\users\nektus\desktop\grad\cg_gametest\src\collisionmanager.cpp
+1682809832 source:c:\users\nektus\desktop\grad\cg_gametest\src\collisionmanager.cpp
 	"CollisionManager.h"
 	"Character.h"
 

@@ -71,7 +71,7 @@ void Character::Die()
     dying = false;
     dead = true;
     RenderManager::shared_instance().RemoveRenderableFromList(this);
-    CollisionManager::shared_instance().RemoveNPC(this);
+    //CollisionManager::shared_instance().RemoveNPC(this);
 }
 
 void Character::Render()
@@ -92,18 +92,18 @@ void Character::Render()
 
 void Character::AutonomousThinking()
 {
-    if(Target == nullptr || Target->IsDead())
+    if(Target == nullptr || Target->IsDying() || Target->IsDead())
     {
         Character* player = CollisionManager::shared_instance().GetPlayerCharacter();
         //FindNewTarget
-        if(!player->IsDead())
+        if(!player->IsDead() && !player->IsDying())
             this->Target = player;
         else
         {
             Target = nullptr;
             this->SetAutonomous(false);
+            return;
         }
-
     }
     float x1 = this->anchor->x; //this->orientationVector.x;
     float y1 = this->anchor->y; //this->orientationVector.y;
