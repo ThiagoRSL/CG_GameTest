@@ -32,7 +32,7 @@
 
 Character* player_character;
 
-bool moving;
+float moving;
 int rotating;
 
 bool control_rotating_right;
@@ -45,7 +45,7 @@ void render()
     FPSManager::shared_instance().UpdateFrames();
     RenderManager::shared_instance().RenderAll();
     if(moving)
-        player_character->Move(500/FPSManager::shared_instance().GetFrames());
+        player_character->Move(moving*500/FPSManager::shared_instance().GetFrames());
     if(rotating != 0)
         player_character->Rotate(rotating*200/FPSManager::shared_instance().GetFrames());
 }
@@ -76,7 +76,7 @@ void keyboard(int key)
         if(!control_moving)
         {
             control_moving = true;
-            moving = true;
+            moving = 1;
         }
       break;
       case 202:
@@ -86,6 +86,11 @@ void keyboard(int key)
         }
       break;
       case 203:
+        if(!control_moving)
+        {
+            control_moving = true;
+            moving = -0.5;
+        }
       break;
     }
 }
