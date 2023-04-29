@@ -1,6 +1,7 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
+#include <math.h>
 #include "Poly.h"
 #include "Projectile.h"
 
@@ -19,8 +20,10 @@ class Character : public Poly
         void Render();
 
     protected:
-
+        void AutonomousThinking();
     private:
+        Character* Target;
+        bool autonomous;
         float movement_speed;
         float rotation_speed;
         float base_damage;
@@ -29,9 +32,18 @@ class Character : public Poly
         float hit_points;
         float speed;
         bool dying;
+        bool dead;
         int death_frame;
         float death_rgb_save[3];
         float last_death_frame;
+
+    //Getters e Setters
+    public:
+        bool IsDead() {return this->dead;}
+        Pnt2* GetAnchor() {return this->anchor;}
+
+        void SetAutonomous(bool autonomous){this->autonomous = autonomous;}
+        bool SetTarget(Character* target) {this->Target = target;}
 };
 
 #endif // CHARACTER_H

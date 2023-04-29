@@ -5,7 +5,10 @@ CollisionManager::CollisionManager()
 {
     //ctor
 }
-
+Character* CollisionManager::GetPlayerCharacter()
+{
+    return this->player_character;
+}
 void CollisionManager::SetPlayerCharacter(Character* player_character)
 {
     this->player_character = player_character;
@@ -25,7 +28,7 @@ void CollisionManager::RemoveNPC(Character* character)
         }
     }
 }
-Character* CollisionManager::VerifyCollision(float x, float y)
+Character* CollisionManager::VerifyCollisionNPCs(float x, float y)
 {
     int i;
     Character* actual;
@@ -36,5 +39,13 @@ Character* CollisionManager::VerifyCollision(float x, float y)
         {
             return actual;
         }
+    }
+    return nullptr;
+}
+Character* CollisionManager::VerifyCollisionPlayer(float x, float y)
+{
+    if(player_character->HasCollision(x, y))
+    {
+        return player_character;
     }
 }

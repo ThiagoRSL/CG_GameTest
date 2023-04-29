@@ -10,18 +10,28 @@ Projectile::Projectile(float x, float y, float damage, Character* Owner)
 
 void Projectile::Render()
 {
-    if(!this->Owner->HasCollision(this->anchor->x, this->anchor->y))
+    this->Move(1000/FPSManager::shared_instance().GetFrames());
+    if(this->Owner->HasCollision(this->anchor->x, this->anchor->y))
     {
-        CV::color(1,1,1);
-        CV::circleFill(this->anchor->x, this->anchor->y, 5, 30);
+        return;
+    }
+    CV::color(1,1,1);
+    CV::circleFill(this->anchor->x, this->anchor->y, 5, 30);
 
-        if(Character* enemy = CollisionManager::shared_instance().VerifyCollision(this->anchor->x, this->anchor->y))
+    Character* target = CollisionManager::shared_instance().VerifyCollisionNPCs(this->anchor->x, this->anchor->y);
+
+    if(target == this->Owner)
+    {
+        printf("Vasco");
+    }
+    else
+    {
+        if(target != nullptr)
         {
+            target->ReceiveDamage(this->damage);
             DestroyProjectile();
-            enemy->ReceiveDamage(this->damage);
         }
     }
-    this->Move(1000/FPSManager::shared_instance().GetFrames());
 }
 
 void Projectile::DestroyProjectile()

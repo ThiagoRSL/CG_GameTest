@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1682795820 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
+1682809207 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
 	"Character.h"
 
-1682795804 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
+1682808814 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
+	<math.h>
 	"Poly.h"
 	"Projectile.h"
 
@@ -14,7 +15,7 @@
 	"CollisionManager.h"
 	"GeometryAux.h"
 
-1682736456 c:\users\nektus\desktop\grad\cg_gametest\src\vec2.h
+1682798683 c:\users\nektus\desktop\grad\cg_gametest\src\vec2.h
 	<math.h>
 	"Renderable.h"
 	"gl_canvas2d.h"
@@ -59,10 +60,10 @@
 
 1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\mousemanager.h
 
-1682791716 c:\users\nektus\desktop\grad\cg_gametest\src\collisionmanager.h
+1682805963 c:\users\nektus\desktop\grad\cg_gametest\src\collisionmanager.h
 	<vector>
 
-1682730034 c:\users\nektus\desktop\grad\cg_gametest\src\geometryaux.h
+1682798812 c:\users\nektus\desktop\grad\cg_gametest\src\geometryaux.h
 	<math.h>
 
 1682795770 c:\users\nektus\desktop\grad\cg_gametest\src\projectile.h
@@ -73,7 +74,7 @@
 	<stdio.h>
 	<time.h>
 
-1682791709 source:c:\users\nektus\desktop\grad\cg_gametest\src\collisionmanager.cpp
+1682807993 source:c:\users\nektus\desktop\grad\cg_gametest\src\collisionmanager.cpp
 	"CollisionManager.h"
 	"Character.h"
 
@@ -90,14 +91,14 @@
 1682744541 source:c:\users\nektus\desktop\grad\cg_gametest\src\fpsmanager.cpp
 	"FPSManager.h"
 
-1682730034 source:c:\users\nektus\desktop\grad\cg_gametest\src\geometryaux.cpp
+1682804173 source:c:\users\nektus\desktop\grad\cg_gametest\src\geometryaux.cpp
 	"GeometryAux.h"
 
 1682737183 source:c:\users\nektus\desktop\grad\cg_gametest\src\gl_canvas2d.cpp
 	"gl_canvas2d.h"
 	<GL/glut.h>
 
-1682795643 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
+1682808306 source:c:\users\nektus\desktop\grad\cg_gametest\src\main.cpp
 	<GL/glut.h>
 	<GL/freeglut_ext.h>
 	<math.h>
@@ -126,7 +127,7 @@
 1682792993 source:c:\users\nektus\desktop\grad\cg_gametest\src\poly.cpp
 	"Poly.h"
 
-1682791629 source:c:\users\nektus\desktop\grad\cg_gametest\src\projectile.cpp
+1682807980 source:c:\users\nektus\desktop\grad\cg_gametest\src\projectile.cpp
 	"Projectile.h"
 	"Character.h"
 

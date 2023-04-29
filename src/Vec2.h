@@ -6,7 +6,6 @@
 #include "gl_canvas2d.h"
 #include "Pnt2.h"
 
-#define PI 3.141992
 
 class Vec2 : public Renderable
 {

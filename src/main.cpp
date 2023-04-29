@@ -34,6 +34,7 @@
 #include "Character.h"
 
 Character* player_character;
+Character* enemy_character;
 
 std::set<int> PressedKeys;
 
@@ -67,8 +68,12 @@ void keyboard(int key)
       //seta para a esquerda
       case 99:
         //tecla C
+        player_character->ReceiveDamage(200);
+      break;
       case 120:
         //tecla X
+        enemy_character->Shoot();
+      break;
       case 122:
         //tecla Z
         player_character->Shoot();
@@ -146,11 +151,11 @@ void mouse(int button, int state, int wheel, int direction, int x, int y)
     MouseManager::shared_instance().PosX = x; //guarda as coordenadas do mouse para exibir dentro da render()
     MouseManager::shared_instance().PosY = y;
 
-    printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
+    //printf("\nmouse %d %d %d %d %d %d", button, state, wheel, direction,  x, y);
 
     if(button == 0 && state == 0)
     {
-        player_character->SetAnchor(x, y);
+        //player_character->SetAnchor(x, y);
     }
 }
 
@@ -171,21 +176,23 @@ int main(void)
     player_character->AddVertex(20,25);
     player_character->AddVertex(-20,25);
 
-    Character* enemy_character = new Character(600, 600, RGB2);
+    enemy_character = new Character(0, 0, RGB2);
     enemy_character->AddVertex(-20,-25);
     enemy_character->AddVertex(-10,-40);
     enemy_character->AddVertex(10,-40);
     enemy_character->AddVertex(20,-25);
     enemy_character->AddVertex(20,25);
     enemy_character->AddVertex(-20,25);
+    enemy_character->SetAutonomous(true);
 
     RenderManager::shared_instance().AddRenderableToList(player_character);
     RenderManager::shared_instance().AddRenderableToList(enemy_character);
     CollisionManager::shared_instance().SetPlayerCharacter(player_character);
+    CollisionManager::shared_instance().AddNPC(player_character);
     CollisionManager::shared_instance().AddNPC(enemy_character);
 
-    int screenWidth = 1080;
-    int screenHeight = 720;
+    int screenWidth = 1600;
+    int screenHeight = 800;
     CV::init(&screenWidth, &screenHeight, "Titulo da Janela: Canvas 2D - Pressione 1, 2, 3");
     CV::run();
 }

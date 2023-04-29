@@ -10,10 +10,12 @@ class CollisionManager
         static CollisionManager &shared_instance() {static CollisionManager collisionManager; return collisionManager;}
         CollisionManager();
 
+        Character* GetPlayerCharacter();
         void SetPlayerCharacter(Character* player_character);
         void AddNPC(Character* character);
         void RemoveNPC(Character* character);
-        Character* VerifyCollision(float x, float y);
+        Character* VerifyCollisionNPCs(float x, float y);
+        Character* VerifyCollisionPlayer(float x, float y);
     protected:
 
     private:

@@ -37,6 +37,10 @@ float GeometryAux::DistanceBetween(float x0, float y0, float x1, float y1)
     if(diff < 0) diff = diff*-1;
     return sqrtf(diff);
 }
+float GeometryAux::AngleBetween(float x1, float y1, float x2, float y2)
+{
+    return atan2(y2 - y1, x2 - x1) * 180 / M_PI;
+}
 float GeometryAux::GetDiff(float c0, float c1)
 {
     return c0-c1;

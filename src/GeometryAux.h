@@ -1,6 +1,8 @@
 #ifndef GEOMETRYAUX_H
 #define GEOMETRYAUX_H
+#define _USE_MATH_DEFINES
 #include <math.h>
+
 class Point
 {
     public:
@@ -29,6 +31,7 @@ class GeometryAux
         static bool Intercept(float x0, float y0, float x1, float y1, float x2, float y2, float x3, float y3);
         static float DistanceBetween(float x0, float y0, float x1, float y1);
         static float GetDiff(float c0, float c1);
+        static float AngleBetween(float x1, float y1, float x2, float y2);
 
     protected:
 
