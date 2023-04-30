@@ -5,17 +5,23 @@ static int death_frames = 20;
 Character::Character(float x, float y, float RGB[3])
     : Poly(x, y)
 {
-    this->autonomous = false;
-    this->Target = nullptr;
-    this->dying = false;
-    this->dead = false;
-    this->hit_points = 25;
-    this->base_damage = 10;
-    this->rotating = 0;
-    this->moving = 0;
     this->movement_speed = 500;
     this->rotation_speed = 200;
 
+    //Autonomous Module
+    this->autonomous = false;
+    this->view_range = 1000;
+    this->Target = nullptr;
+
+    this->hit_points = 25;
+    this->base_damage = 10;
+    this->shot_cooldown = 0;
+
+    this->dying = false;
+    this->dead = false;
+    //Controls
+    this->rotating = 0;
+    this->moving = 0;
 
     this->background_color[0] = RGB[0];
     this->background_color[1] = RGB[1];
@@ -37,13 +43,17 @@ void Character::SetMoving(float movement)
 
 void Character::Shoot()
 {
-    Projectile* shotPoly = new Projectile(this->anchor->x, this->anchor->y, this->base_damage, this);
-    shotPoly->AddVertex(this->anchor->x - 5, this->anchor->y - 5);
-    shotPoly->AddVertex(this->anchor->x + 5, this->anchor->y - 5);
-    shotPoly->AddVertex(this->anchor->x + 5, this->anchor->y + 5);
-    shotPoly->AddVertex(this->anchor->x - 5, this->anchor->y + 5);
-    shotPoly->SetOrientation(this->orientationVector.x, this->orientationVector.y);
-    RenderManager::shared_instance().AddRenderableToList(shotPoly);
+    if(shot_cooldown == 0)
+    {
+        Projectile* shotPoly = new Projectile(this->anchor->x, this->anchor->y, this->base_damage, this);
+        shotPoly->AddVertex(this->anchor->x - 5, this->anchor->y - 5);
+        shotPoly->AddVertex(this->anchor->x + 5, this->anchor->y - 5);
+        shotPoly->AddVertex(this->anchor->x + 5, this->anchor->y + 5);
+        shotPoly->AddVertex(this->anchor->x - 5, this->anchor->y + 5);
+        shotPoly->SetOrientation(this->orientationVector.x, this->orientationVector.y);
+        RenderManager::shared_instance().AddRenderableToList(shotPoly);
+        shot_cooldown = 20;
+    }
 }
 void Character::ReceiveDamage(float damage)
 {
@@ -74,8 +84,21 @@ void Character::Die()
     //CollisionManager::shared_instance().RemoveNPC(this);
 }
 
+void Character::RefreshShotCooldown()
+{
+    if(shot_cooldown == 0)
+        return;
+
+    float frames = FPSManager::shared_instance().GetFrames();
+    if(last_shot_frame != frames)
+    {
+        shot_cooldown--;
+        last_shot_frame = frames;
+    }
+}
 void Character::Render()
 {
+    RefreshShotCooldown();
     if(dying)
     {
         this->AnimateDeath();
@@ -105,6 +128,10 @@ void Character::AutonomousThinking()
             return;
         }
     }
+    if(GeometryAux::DistanceBetween(this->anchor, Target->GetAnchor()) > view_range)
+    {
+        return;
+    }
     float x1 = this->anchor->x; //this->orientationVector.x;
     float y1 = this->anchor->y; //this->orientationVector.y;
     float x2 = Target->GetAnchor()->x;
@@ -126,10 +153,6 @@ void Character::AutonomousThinking()
     {
         rotating = 1;
     }
-
-
-
-
     printf("\nAngle %f", angleDifference);
     //if(angleDifference > 0) rotating = 1;
     //else if(angleDifference < 0) rotating = -1;

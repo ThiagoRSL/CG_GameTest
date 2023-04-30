@@ -17,22 +17,37 @@ class Character : public Poly
         void AnimateDeath();
         void Die();
 
+        void RefreshShotCooldown();
         void Render();
 
     protected:
         void AutonomousThinking();
     private:
-        Character* Target;
-        bool autonomous;
+        //Control Variables
+        float rotating;
+        float moving;
+
+        //Base stats
         float movement_speed;
         float rotation_speed;
         float base_damage;
-        float rotating;
-        float moving;
-        float hit_points;
         float speed;
+
+        // Life
+        float hit_points;
         bool dying;
         bool dead;
+
+        //Autonomy
+        Character* Target;
+        bool autonomous;
+        float view_range;
+
+        // Shot control
+        float last_shot_frame;
+        float shot_cooldown;
+
+        // Death Animation
         int death_frame;
         float death_rgb_save[3];
         float last_death_frame;

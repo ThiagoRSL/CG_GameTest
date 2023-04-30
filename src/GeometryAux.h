@@ -2,6 +2,7 @@
 #define GEOMETRYAUX_H
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include "Pnt2.h"
 
 class Point
 {
@@ -30,6 +31,7 @@ class GeometryAux
         static int GetOrientation(float x0, float y0, float x1, float y1, float x2, float y2);
         static bool Intercept(float x0, float y0, float x1, float y1, float x2, float y2, float x3, float y3);
         static float DistanceBetween(float x0, float y0, float x1, float y1);
+        static float DistanceBetween(Pnt2* p1, Pnt2* p2);
         static float GetDiff(float c0, float c1);
         static float AngleBetween(float x1, float y1, float x2, float y2);
 

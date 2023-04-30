@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1682809775 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
+1682874629 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
 	"Character.h"
 
-1682809529 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
+1682875239 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
 	<math.h>
 	"Poly.h"
 	"Projectile.h"
@@ -63,8 +63,9 @@
 1682805963 c:\users\nektus\desktop\grad\cg_gametest\src\collisionmanager.h
 	<vector>
 
-1682798812 c:\users\nektus\desktop\grad\cg_gametest\src\geometryaux.h
+1682875165 c:\users\nektus\desktop\grad\cg_gametest\src\geometryaux.h
 	<math.h>
+	"Pnt2.h"
 
 1682795770 c:\users\nektus\desktop\grad\cg_gametest\src\projectile.h
 	"FPSManager.h"
@@ -91,7 +92,7 @@
 1682744541 source:c:\users\nektus\desktop\grad\cg_gametest\src\fpsmanager.cpp
 	"FPSManager.h"
 
-1682804173 source:c:\users\nektus\desktop\grad\cg_gametest\src\geometryaux.cpp
+1682875146 source:c:\users\nektus\desktop\grad\cg_gametest\src\geometryaux.cpp
 	"GeometryAux.h"
 
 1682737183 source:c:\users\nektus\desktop\grad\cg_gametest\src\gl_canvas2d.cpp
