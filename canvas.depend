@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1682960317 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
+1682961460 source:c:\users\nektus\desktop\grad\cg_gametest\src\character.cpp
 	"Character.h"
 
-1682875239 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
+1682960995 c:\users\nektus\desktop\grad\cg_gametest\src\character.h
 	<math.h>
 	"Poly.h"
 	"Projectile.h"

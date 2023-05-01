@@ -18,6 +18,7 @@ class Character : public Poly
         void Die();
 
         void RefreshShotCooldown();
+        void ResetControls();
         void Render();
 
     protected:
@@ -40,6 +41,7 @@ class Character : public Poly
 
         //Autonomy
         Character* Target;
+        Pnt2* target_last_known_location;
         bool autonomous;
         float view_range;
 

@@ -10,8 +10,9 @@ Character::Character(float x, float y, float RGB[3])
 
     //Autonomous Module
     this->autonomous = false;
-    this->view_range = 1000;
+    this->view_range = 600;
     this->Target = nullptr;
+    this->target_last_known_location = new Pnt2();
 
     this->hit_points = 25;
     this->base_damage = 10;
@@ -112,6 +113,11 @@ void Character::Render()
 
     Poly::Render();
 }
+void Character::ResetControls()
+{
+    this->moving = 0;
+    this->rotating = 0;
+}
 
 void Character::AutonomousThinking()
 {
@@ -124,14 +130,25 @@ void Character::AutonomousThinking()
         else
         {
             Target = nullptr;
+            this->ResetControls();
             this->SetAutonomous(false);
             return;
         }
     }
     if(GeometryAux::DistanceBetween(this->anchor, Target->GetAnchor()) > view_range)
     {
+        rotating = 0;
+        if(GeometryAux::DistanceBetween(this->anchor, this->target_last_known_location) > 100)
+        {
+            moving = 0.5;
+        }
+        else
+            moving = 0;
         return;
     }
+    moving = 0;
+    this->target_last_known_location->x = Target->GetAnchor()->x;
+    this->target_last_known_location->y = Target->GetAnchor()->y;
     float x1 = this->anchor->x; //this->orientationVector.x;
     float y1 = this->anchor->y; //this->orientationVector.y;
     float x2 = Target->GetAnchor()->x;
