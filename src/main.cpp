@@ -176,7 +176,7 @@ int main(void)
     player_character->AddVertex(20,25);
     player_character->AddVertex(-20,25);
 
-    enemy_character = new Character(0, 0, RGB2);
+    enemy_character = new Character(800, 400, RGB2);
     enemy_character->AddVertex(-20,-25);
     enemy_character->AddVertex(-10,-40);
     enemy_character->AddVertex(10,-40);

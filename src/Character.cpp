@@ -143,7 +143,8 @@ void Character::AutonomousThinking()
     float y3 = this->anchor->y + this->orientationVector.y;
     float angleOrientation = GeometryAux::AngleBetween(x1, y1, x3, y3);
 
-    float angleDifference = abs(angleTarget - angleOrientation);
+    float angleDifference = angleTarget - angleOrientation ;
+    float angleDifferenceInverse = (360 - abs(angleDifference));
     if(angleDifference > 0 && angleDifference < 0.5)
     {
         rotating = 0;
@@ -151,10 +152,20 @@ void Character::AutonomousThinking()
     }
     else
     {
-        rotating = 1;
+        //Verifica se é melhor virar em sentido horário ou anti-horário.
+        if(abs(angleDifferenceInverse) > abs(angleDifference))
+        {
+            if(angleDifference > 0)
+                rotating = 1;
+            else
+                rotating = -1;
+        }
+        else
+        {
+            if(angleDifference > 0)
+                rotating = -1;
+            else
+                rotating = 1;
+        }
     }
-    printf("\nAngle %f", angleDifference);
-    //if(angleDifference > 0) rotating = 1;
-    //else if(angleDifference < 0) rotating = -1;
-    //else rotating = 0;
 }
