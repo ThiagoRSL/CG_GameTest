@@ -12,6 +12,8 @@ class Vec2 : public Renderable
     public:
         Pnt2* anchor;
         float x, y;
+        float RelativeX(){return this->anchor->x + x;}
+        float RelativeY(){return this->anchor->y + y;}
 
         Vec2();
         Vec2(float v[2]);

@@ -5,6 +5,9 @@ static int death_frames = 20;
 Character::Character(float x, float y, float RGB[3])
     : Poly(x, y)
 {
+    this->orientationVector.y = -1;
+    this->orientationVector.x = 0;
+
     this->movement_speed = 500;
     this->rotation_speed = 200;
 
@@ -110,6 +113,7 @@ void Character::Render()
     if(autonomous)  AutonomousThinking();
     if(moving)      Move(moving*movement_speed/FPSManager::shared_instance().GetFrames());
     if(rotating)    Rotate(rotating*rotation_speed/FPSManager::shared_instance().GetFrames());
+    this->orientationVector.Render();
 
     Poly::Render();
 }
@@ -149,20 +153,21 @@ void Character::AutonomousThinking()
     moving = 0;
     this->target_last_known_location->x = Target->GetAnchor()->x;
     this->target_last_known_location->y = Target->GetAnchor()->y;
-    float x1 = this->anchor->x; //this->orientationVector.x;
-    float y1 = this->anchor->y; //this->orientationVector.y;
-    float x2 = Target->GetAnchor()->x;
-    float y2 = Target->GetAnchor()->y;
 
-    float angleTarget = GeometryAux::AngleBetween(x1, y1, x2, y2);
+    float x1 = this->anchor->x;
+    float y1 = this->anchor->y;
+    float x2 = Target->GetAnchor()->x - x1; // Considerando o ponto âncora como a origem
+    float y2 = Target->GetAnchor()->y - y1; // Considerando o ponto âncora como a origem
+    float x3 = this->orientationVector.x;
+    float y3 = this->orientationVector.y;
 
-    float x3 = this->anchor->x + this->orientationVector.x;
-    float y3 = this->anchor->y + this->orientationVector.y;
-    float angleOrientation = GeometryAux::AngleBetween(x1, y1, x3, y3);
+    float angleTarget = GeometryAux::AngleBetween(0, 0, x2, y2);
+    float angleOrientation = GeometryAux::AngleBetween(0, 0, x3, y3);
 
-    float angleDifference = angleTarget - angleOrientation ;
-    float angleDifferenceInverse = (360 - abs(angleDifference));
-    if(angleDifference > 0 && angleDifference < 0.5)
+    float angleDifference = angleTarget - angleOrientation;
+    float angleDifferenceInverse = (360.0 - abs(angleDifference));
+
+    if(abs(angleDifference) > 0 && abs(angleDifference) < 3)
     {
         rotating = 0;
         Shoot();
@@ -170,19 +175,20 @@ void Character::AutonomousThinking()
     else
     {
         //Verifica se é melhor virar em sentido horário ou anti-horário.
-        if(abs(angleDifferenceInverse) > abs(angleDifference))
+        if(abs(angleDifferenceInverse) < abs(angleDifference))
         {
             if(angleDifference > 0)
-                rotating = 1;
+                rotating = -0.25;
             else
-                rotating = -1;
+                rotating = 0.25;
         }
         else
         {
             if(angleDifference > 0)
-                rotating = -1;
+                rotating = 0.25;
             else
-                rotating = 1;
+                rotating = -0.25;
         }
+        //Atualizar o valor de rotação para o minimo necessário no último frame.
     }
 }

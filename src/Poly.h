@@ -13,6 +13,7 @@ class Poly : public Renderable
     public:
         Poly();
         Poly(float x, float y);
+        Poly(float x, float y, float RGB[3]);
 
         void SetAnchor(float x, float y);
         void SetOrientation(float x, float y);
@@ -20,6 +21,7 @@ class Poly : public Renderable
         void AddVertex(float x, float y);
         void Resize(float scalar);
         void Rotate(float degrees);
+        void Transform(float matrix[2][2]);
         void Move(float speed);
         bool HasCollision(float x, float y);
 

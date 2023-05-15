@@ -83,8 +83,8 @@ void Vec2::Render()
     CV::color(1);
     CV::circle(this->anchor->x, this->anchor->y, 10, 30);
     CV::color(2);
-    CV::line(this->anchor->x, this->anchor->y, this->x + this->anchor->y, this->y + this->anchor->y);
+    CV::line(this->anchor->x, this->anchor->y, this->RelativeX(), this->RelativeY());
     CV::color(3);
-    CV::circle(this->x + this->anchor->y, this->y + this->anchor->y, 10, 30);
+    CV::circle(this->RelativeX(), this->RelativeY(), 10, 30);
 }
 
